@@ -17,9 +17,9 @@ const CONFIG = {
   MODEL: 'gpt-4o-mini',
   TEMPERATURE: 0.7,
   MAX_TOKENS: 1024,
-  COMPANY_NAME: '音链科技有限公司',
-  COMPANY_EMAIL: 'contact@yinlian.com',
-  COMPANY_DOMAIN: 'yinlian.com',
+  COMPANY_NAME: '上海成焰电子科技有限公司',
+  COMPANY_EMAIL: 'contact@chengyan.com',
+  COMPANY_DOMAIN: 'chengyan.com',
   ADMIN_TOKEN: 'admin123',  // 管理页面密码，部署后可通过环境变量 ADMIN_TOKEN 修改
 };
 
