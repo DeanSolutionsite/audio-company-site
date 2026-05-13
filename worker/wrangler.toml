@@ -1,0 +1,31 @@
+name = "audio-company-ai"
+main = "src/index.js"
+compatibility_date = "2025-04-01"
+
+# ========== 环境变量 ==========
+# 部署前必须通过 Cloudflare Dashboard 或 wrangler secret 设置：
+#
+# LLM_API_KEY         [必填] LLM API Key（如 OpenAI 的 sk-xxx）
+# LLM_API_ENDPOINT    [选填] LLM API 地址（默认 OpenAI）
+# LLM_MODEL           [选填] 模型名（默认 gpt-4o-mini）
+# COMPANY_NAME        [选填] 公司名称（默认 音链科技有限公司）
+# COMPANY_EMAIL       [选填] 公司邮箱（默认 contact@yinlian.com）
+# ADMIN_TOKEN         [选填] 管理后台密码（默认 admin123，建议改掉）
+
+[vars]
+LLM_TEMPERATURE = "0.7"
+LLM_MAX_TOKENS = "2048"
+
+# ========== KV 存储绑定 ==========
+# 用于保存客户线索数据。
+# 部署前需要在 Cloudflare Dashboard 中：
+#   1. 左侧菜单 → Workers → KV
+#   2. 创建命名空间（如 audio-company-leads）
+#   3. 进入本 Worker 的 "设置" → "变量" → "KV 命名空间绑定"
+#   4. 添加绑定：变量名 = "LEADS"，KV 命名空间 = 你创建的那个
+#   5. 部署生效
+#
+# 取消下面两行的注释，并将 id 替换为你的 KV 命名空间 ID：
+# [[kv_namespaces]]
+# binding = "LEADS"
+# id = "你的KV命名空间ID"
